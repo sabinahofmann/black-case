@@ -1,0 +1,24 @@
+<div id="page">
+    <header class="sh-container sh-padding-32 sh-center sh-black">
+        {{ if .Params.link }}
+        <h1 class="sh-jumbo"><i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a></h1>
+        {{ else }}
+        <h1 class="sh-jumbo"><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}">{{ .Title }}</a></h1>
+        {{ end }}
+
+        {{ if (.Params.reading_time | default false) }}
+        <p>
+            <i class="fa fa-clock-o"></i>
+            Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
+        </p><!-- /.entry-reading-time -->
+        {{ end }}
+    </header>
+
+    <div class="sh-content sh-padding-64">
+        {{ .Content }}
+        <footer>
+            {{ if gt .Lastmod .Date }}<span>Updated on <span><time datetime="{{ .Lastmod }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></span></span>
+            <span><span class="fn">{{ $.Site.Params.author.name }}</span></span>{{ end }}
+        </footer>
+    </div>
+</div>

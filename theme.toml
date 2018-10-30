@@ -1,0 +1,18 @@
+name = "Black Case"
+license = "MIT"
+licenselink = "https://github.com/sabinahofmann/black-case/blob/master/LICENSE"
+description = "A simple plain css theme for posts and site about like a cv "
+homepage = "http://example.com/"
+tags = ["blog" "responsive" "timeline" "cv"]
+features = ["css"]
+min_version = "0.41"
+
+[author]
+  name = "Sabina Hofmann <info@sabina-hofmann.de>"
+  homepage = "https://sabina-hofmann.de"
+
+# If porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""

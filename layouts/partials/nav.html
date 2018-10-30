@@ -1,0 +1,23 @@
+<nav class="sh-sidebar sh-bar-block sh-small sh-hide-small sh-center">
+  <a href="{{ "/" | relURL }}" class="sh-bar-item sh-button sh-padding-large sh-black">
+    <i class="fa fa-home sh-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="{{ "/about/" | relURL }}" class="sh-bar-item sh-button sh-padding-large sh-hover-black">
+    <i class="fa fa-user sh-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="{{ "/posts/" | relURL }}" class="sh-bar-item sh-button sh-padding-large sh-hover-black">
+    <i class="fa fa-newspaper-o sh-xxlarge"></i>
+    <p>POSTS</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="sh-top sh-hide-large sh-hide-medium" id="shNavbar">
+  <div class="sh-bar sh-black sh-opacity sh-hover-opacity-off sh-center sh-small">
+    <a href="{{ "/" | relURL }}" class="sh-bar-item sh-button" style="width:25% !important">HOME</a>
+    <a href="{{ "/about/" | relURL }}" class="sh-bar-item sh-button" style="width:25% !important">ABOUT</a>
+    <a href="{{ "/posts/" | relURL }}" class="sh-bar-item sh-button" style="width:25% !important">POSTS</a>
+  </div>
+</div>

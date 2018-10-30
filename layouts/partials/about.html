@@ -1,0 +1,88 @@
+<div id="about">
+    <header class="sh-container sh-padding-32 sh-center sh-black">
+        <h1 class="sh-jumbo"><span class="sh-hide-small">I'm</span> Sabina Hofmann.</h1>
+        <p>Coffee maker and web developer.</p>
+    </header>
+
+    <div class="sh-content sh-padding-64">
+        <h2>{{ .Title }}</h2>
+        <hr style="width:200px" class="sh-opacity">
+        <p>{{ .Params.about_me }}</p>
+        <br>
+
+        <h3 class="sh-padding-16">Skills</h3> 
+        <div class="flex-wrapper">
+            {{ range $i, $e := .Params.skills }}
+            {{ $className := "circular-chart blue" }}
+
+            {{ if (le $e.percent 35) }}
+                {{ $className = "circular-chart orange" }}
+            {{ end }}
+                {{ if (gt $e.percent 35) and (lt $e.percent 70)}}
+            {{ $className = "circular-chart green" }}
+            {{ end }}  
+                {{ if (gt $e.percent 65) }}
+            {{ $className = "circular-chart blue" }}
+            {{ end }} 
+
+            <div class="single-chart">
+                <svg viewBox="0 0 36 36" class="{{ $className  }}">
+                <path class="circle-bg"
+                      d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                <path class="circle"
+                      stroke-dasharray="{{ .percent }}, 100"
+                      d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                <text x="18" y="20.35" class="percentage">{{ .percent }}%</text>
+                </svg>
+                {{ .title }}
+            </div>
+            {{ end }}
+        </div>
+        <br><br>    
+
+        <h3 class="sh-padding-16">Work experience</h3>
+        <br>
+        <ul class="timeline">
+            {{ range $i, $e := .Params.cv }}
+            <li {{ if (not (modBool $i 2)) }}class="timeline-inverted" {{ end }}>
+                <div class="timeline-image">
+                    {{ $url := printf "img/about/%s" .img }}
+                    <img class="img-circle img-responsive" src="{{ $url | absURL }}" alt="">
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>{{ .date }}</h4>
+                        <h4 class="subheading">{{ .title | markdownify }}</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">{{ .description  | markdownify }}</p>
+                    </div>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+        <br>
+        <h3 class="sh-padding-16">Language</h3>
+        <p class="sh-wide">German</p>
+        <div class="sh-white">
+            <div class="sh-dark-grey" style="height:28px;width:95%"></div>
+        </div>
+        <p class="sh-wide">English</p>
+        <div class="sh-white">
+            <div class="sh-dark-grey" style="height:28px;width:85%"></div>
+        </div>
+        <br>
+
+        <h3 class="sh-padding-16">Hobbies/Activities</h3>
+        <div class="sh-row sh-center sh-padding-16 sh-section sh-light-grey">
+            {{.Params.activities}}
+        </div>
+        <!-- End About Section -->
+    </div>
+</div>

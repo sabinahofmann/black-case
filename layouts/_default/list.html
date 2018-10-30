@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    {{ partial "head.html" . }}
+    <body class="sh-black">
+        {{ partial "nav.html" . }}
+        <div class="sh-padding-large" id="main">
+            <div class="sh-content sh-padding-64">
+                {{ range where .Paginator.Pages "Type" "in" .Site.Params.mainSections }}
+                <h3 class="sh-padding-16"><a href={{ .Permalink }}>{{ .Title }}</a></h3>
+                {{ end }}
+            </div>
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
+</html>
