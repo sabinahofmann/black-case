@@ -6,22 +6,27 @@
 
     <div class="sh-content sh-padding-64">
         <h2>{{ .Title }}</h2>
-        <hr style="width:200px" class="sh-opacity">
         <p>{{ .Params.about_me }}</p>
         <br>
+        <h2 class="sh-padding-16">Soft skills</h2>
 
-        <h3 class="sh-padding-16">Skills</h3> 
+        {{ range $i, $e := .Params.soft_skills }}
+            {{ $e }}
+        {{ end }}
+
+        <br>
+        <h2 class="sh-padding-16">Programming language</h2> 
         <div class="flex-wrapper">
-            {{ range $i, $e := .Params.skills }}
+            {{ range $i, $e := .Params.programming_languages }}
             {{ $className := "circular-chart blue" }}
 
             {{ if (le $e.percent 35) }}
-                {{ $className = "circular-chart orange" }}
+            {{ $className = "circular-chart orange" }}
             {{ end }}
-                {{ if (gt $e.percent 35) and (lt $e.percent 70)}}
+            {{ if (gt $e.percent 35) and (lt $e.percent 70)}}
             {{ $className = "circular-chart green" }}
             {{ end }}  
-                {{ if (gt $e.percent 65) }}
+            {{ if (gt $e.percent 65) }}
             {{ $className = "circular-chart blue" }}
             {{ end }} 
 
@@ -44,16 +49,20 @@
             </div>
             {{ end }}
         </div>
-        <br><br>    
-
-        <h3 class="sh-padding-16">Work experience</h3>
-        <br>
+        <br> 
+        <h2 class="sh-padding-16">Miscellaneous</h2>
+        <div class="flex-wrapper">
+            {{ range $i, $e := .Params.miscellaneous_tags }}
+            <span class="sh-tag">{{ $e }}</span>
+            {{ end }}
+        </div>
+        <br>    
+        <h2 class="sh-padding-16">Work experience</h2>
         <ul class="timeline">
-            {{ range $i, $e := .Params.cv }}
+            {{ range $i, $e := .Params.work_experience }}
             <li {{ if (not (modBool $i 2)) }}class="timeline-inverted" {{ end }}>
                 <div class="timeline-image">
-                    {{ $url := printf "img/about/%s" .img }}
-                    <img class="img-circle img-responsive" src="{{ $url | absURL }}" alt="">
+                    <img class="img-circle img-responsive" src="" alt="">
                 </div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
@@ -68,7 +77,7 @@
             {{ end }}
         </ul>
         <br>
-        <h3 class="sh-padding-16">Language</h3>
+        <h2 class="sh-padding-16">Language</h2>
         <p class="sh-wide">German</p>
         <div class="sh-white">
             <div class="sh-dark-grey" style="height:28px;width:95%"></div>
@@ -79,7 +88,7 @@
         </div>
         <br>
 
-        <h3 class="sh-padding-16">Hobbies/Activities</h3>
+        <h2 class="sh-padding-16">Hobbies/Activities</h2>
         <div class="sh-row sh-center sh-padding-16 sh-section sh-light-grey">
             {{.Params.activities}}
         </div>

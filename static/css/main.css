@@ -13,7 +13,7 @@ body{
     margin:0
 }
 html, body{
-    font-family:Verdana,sans-serif;
+    font-family:Verdana, sans-serif;
     font-size:15px;
     line-height:1.5
 }
@@ -151,7 +151,7 @@ hr {
     white-space:nowrap;
     -webkit-touch-callout:none;
     -webkit-user-select:none;
-    -khtml-user-select:none;
+    -khtml-user-select:sh-paddingnone;
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none
@@ -232,14 +232,26 @@ hr {
 @media (max-width:992px){.sh-sidebar.sh-collapse{display:none}.sh-main{margin-left:0!important;margin-right:0!important}.sh-auto{max-width:100%}}
 .sh-top,.sh-bottom{position:fixed;width:100%;z-index:1}.sh-top{top:0}.sh-bottom{bottom:0}
 .sh-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
-.sh-row-padding,.sh-row-padding>.sh-half,.sh-row-padding>.sh-third,.sh-row-padding>.sh-twothird,.sh-row-padding>.sh-threequarter,.sh-row-padding>.sh-quarter,.sh-row-padding>.sh-col{padding:0 8px}
-.sh-container,.sh-panel{padding:0.01em 16px}.sh-panel{margin-top:16px;margin-bottom:16px}
+.sh-container {
+    padding:0.01em 16px
+}
 .sh-opacity,.sh-hover-opacity:hover{opacity:0.60}.sh-opacity-off,.sh-hover-opacity-off:hover{opacity:1}
 .sh-opacity-max{opacity:0.25}.sh-opacity-min{opacity:0.75}
-.sh-section,.sh-code{margin-top:16px!important;margin-bottom:16px!important}
+.sh-section {
+    margin-top:16px!important;
+    margin-bottom:16px!important
+}
 .sh-margin{margin:16px!important}.sh-margin-top{margin-top:16px!important}.sh-margin-bottom{margin-bottom:16px!important}
 .sh-margin-left{margin-left:16px!important}.sh-margin-right{margin-right:16px!important}
-.sh-padding-small{padding:4px 8px!important}.sh-padding{padding:8px 16px!important}.sh-padding-large{padding:12px 24px!important}
+.sh-padding-small {
+    padding:4px 8px!important
+}
+.sh-padding {
+    padding:8px 16px!important
+}
+.sh-padding-large {
+    padding:12px 24px!important
+}
 .sh-padding-16 {
     padding-top:16px!important;
     padding-bottom:16px!important
@@ -281,6 +293,15 @@ hr {
     #main {
         margin-left: 0
     }
+}
+.sh-tag {
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background-color: #616161;
+    margin: 7px;
+    border-radius: 20px;x;
 }
 /* 
    Timeline 
@@ -500,4 +521,30 @@ hr {
     font-family: sans-serif;
     font-size: 0.3em;
     text-anchor: middle; 
+}
+
+/* skills
+=============================================================================== */
+.skill-container {
+  display: table;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.skill {
+  display: table-cell;
+  width: 10%;
+  padding: 1%;
+}
+.skill-left {
+
+}
+.skill-right {
+   
+}
+.skill-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
