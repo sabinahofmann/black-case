@@ -1,7 +1,7 @@
 <div id="about">
     <header class="sh-container sh-padding-32 sh-center sh-black">
         <h1 class="sh-jumbo"><span class="sh-hide-small">I'm</span> Sabina Hofmann.</h1>
-        <p>Coffee maker and web developer.</p>
+        <p>I know I don't know anything.</p>
     </header>
 
     <div class="sh-content sh-padding-64">
@@ -9,14 +9,13 @@
         <p>{{ .Params.about_me }}</p>
         <br>
         <h2 class="sh-padding-16">Soft skills</h2>
-
         {{ range $i, $e := .Params.soft_skills }}
-            {{ $e }}
-        {{ end }}
+            - {{ $e }}
+        {{ end }} -
 
         <br>
         <h2 class="sh-padding-16">Programming language</h2> 
-        <div class="flex-wrapper">
+        <div class="sh-flex-wrapper">
             {{ range $i, $e := .Params.programming_languages }}
             {{ $className := "circular-chart blue" }}
 
@@ -51,7 +50,7 @@
         </div>
         <br> 
         <h2 class="sh-padding-16">Miscellaneous</h2>
-        <div class="flex-wrapper">
+        <div class="sh-flex-wrapper">
             {{ range $i, $e := .Params.miscellaneous_tags }}
             <span class="sh-tag">{{ $e }}</span>
             {{ end }}
@@ -80,11 +79,11 @@
         <h2 class="sh-padding-16">Language</h2>
         <p class="sh-wide">German</p>
         <div class="sh-white">
-            <div class="sh-dark-grey" style="height:28px;width:95%"></div>
+            <div class="sh-grey" style="height:28px;width:95%"></div>
         </div>
         <p class="sh-wide">English</p>
         <div class="sh-white">
-            <div class="sh-dark-grey" style="height:28px;width:85%"></div>
+            <div class="sh-grey" style="height:28px;width:85%"></div>
         </div>
         <br>
 
