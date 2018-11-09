@@ -4,11 +4,6 @@
     <body class="sh-black">
         {{ partial "nav.html" . }}
         <div class="sh-padding-large" id="main">
-            {{ if (eq .Type "about") }}
-                {{ partial "about.html" . }}
-            {{ else }}
-                {{ partial "page.html" . }}
-            {{ end }}
             {{ partial "footer.html" . }}
         </div>
     </body>
