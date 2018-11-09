@@ -6,12 +6,15 @@
         <div class="sh-padding-large" id="main">
             <div id="home">
                 <header class="sh-container sh-padding-32 sh-center sh-black">
-                    <h1 class="sh-jumbo">All Welcomes</h1>
+                    <h1 class="sh-jumbo">All Pages</h1>
                     <p>Everything that moves me.</p>
                 </header>
 
                 <div class="sh-content sh-padding-64">
-                
+                    {{ $paginator := .Paginate (where .Site.Pages "Type" "page") }}
+                    {{ partial "pagination.html" . }}
+                    {{ range $paginator.Pages }}
+                    {{ end }}
                 </div>
             </div>
             {{ partial "footer.html" . }}

@@ -1,16 +1,19 @@
 <div id="page">
     <header class="sh-container sh-padding-32 sh-center sh-black">
+        <h1>
+            HI
         {{ if .Params.link }}
-        <h1 class="sh-jumbo"><i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a></h1>
+            <i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a>
         {{ else }}
-        <h1 class="sh-jumbo"><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}">{{ .Title }}</a></h1>
+            <a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}">{{ .Title }}</a>
         {{ end }}
+        </h1>
 
         {{ if (.Params.reading_time | default false) }}
-        <p>
-            <i class="fa fa-clock-o"></i>
-            Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
-        </p><!-- /.entry-reading-time -->
+            <p>
+                <i class="fa fa-clock-o"></i>
+                Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
+            </p><!-- /.entry-reading-time -->
         {{ end }}
     </header>
 
