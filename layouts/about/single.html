@@ -8,6 +8,9 @@
                 <header class="sh-container sh-padding-32 sh-center sh-black">
                     <h1 class="sh-jumbo"><span class="sh-hide-small">I'm</span> Sabina Hofmann.</h1>
                     <p>I know I don't know anything.</p>
+                        {{ if .Site.Params.image }}                    
+                               <img src="{{ .Site.Params.image | relURL }}" alt="{{ .Title }}" class="sh-image" width="35%" height="35%">
+                        {{ end }}
                 </header>
 
                 <div class="sh-content sh-padding-64">
@@ -18,7 +21,7 @@
                     {{ range $i, $e := .Params.soft_skills }}
                         - {{ $e }}
                     {{ end }} -
-
+                    
                     <br>
                     <h2 class="sh-padding-16">Programming language</h2> 
                     <div class="sh-flex-wrapper">

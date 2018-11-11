@@ -20,8 +20,13 @@ html, body{
 article, aside, details, footer, header, main, menu, nav, section, summary {
     display: block
 }
+img {
+    vertical-align: middle;
+    border-style: none;
+}
 a { 
     text-decoration: none;
+    color: white;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
@@ -105,7 +110,7 @@ hr {
 }
 .sh-dark-grey,.sh-hover-dark-grey:hover {
     color: #fff!important;
-    background-color: #141414!important
+    background-color: #606060!important
 }
 /* typography
 ============================================================================== */
@@ -304,6 +309,10 @@ hr {
 }
 .sh-row-padding img {
     margin-bottom: 12px
+}
+.sh-image {
+    max-width: 100%;
+    height: auto;
 }
 /* Set the width of the sidebar to 120px */
 .sh-sidebar {
