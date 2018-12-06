@@ -1,23 +1,32 @@
-<nav class="sh-sidebar sh-bar-block sh-small sh-hide-small sh-center">
-  <a href="{{ "/" | relURL }}" class="sh-bar-item sh-button sh-padding-large sh-black">
-    <i class="fa fa-home sh-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="{{ "/about" | relURL }}" class="sh-bar-item sh-button sh-padding-large sh-hover-black">
-    <i class="fa fa-user sh-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="{{ "/post/" | relURL }}" class="sh-bar-item sh-button sh-padding-large sh-hover-black">
-    <i class="fa fa-newspaper-o sh-xxlarge"></i>
-    <p>POSTS</p>
-  </a>
+<!--class="bar-item button padding-large black"-->
+<nav class="sidebar bar-block small hide-small center">
+    {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relLangURL }}" class="bar-item button padding-large hover-black">
+            {{ .Pre | safeHTML }}
+            <p>{{ .Name }}</p>
+        </a>
+    {{ end }}
+    {{ if .IsTranslated }}
+        {{ range .Translations }}
+            <a href="{{ .Permalink }}" class="bar-item button padding-large hover-black">
+                <i class="fas fa-flag xxlarge"></i>
+                <p>{{ .Language.LanguageName }}</p>
+            </a>     
+        {{ end}}
+    {{ end }}
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="sh-top sh-hide-large sh-hide-medium" id="shNavbar">
-  <div class="sh-bar sh-black sh-opacity sh-hover-opacity-off sh-center sh-small">
-    <a href="{{ "/" | relURL }}" class="sh-bar-item sh-button" style="width:25% !important">HOME</a>
-    <a href="{{ "/about" | relURL }}" class="sh-bar-item sh-button" style="width:25% !important">ABOUT</a>
-    <a href="{{ "/post/" | relURL }}" class="sh-bar-item sh-button" style="width:25% !important">POSTS</a>
-  </div>
+<div class="top hide-large hide-medium">
+    <nav class="bar black opacity hover-opacity-off center small">
+        {{ range .Site.Menus.main }}
+            <a href="{{ .URL | relLangURL }}" class="bar-item button" style="width:25% !important">{{ .Name }}</a>
+        {{ end }}
+        {{ if .IsTranslated }}
+            {{ range .Translations }}
+                <a href="{{ .Permalink }}" class="bar-item button" style="width:25% !important">{{ .Language.LanguageName }}</a>     
+            {{ end}}
+        {{ end }}
+    </nav>
 </div>
+    

@@ -1,58 +1,56 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html>
     {{ partial "head.html" . }}
-    <body class="sh-black">
+    <body class="black">
         {{ partial "nav.html" . }}
-        <div class="sh-padding-large" id="main">
-            <div id="post">
-                <header class="sh-container sh-padding-32 sh-center sh-black sh-content">
-                    <h1 class="sh-jumbo">
-                        {{ if .Params.link }}
+        <div class="padding-large">
+            <header class="container padding-32 center black content">
+                <h1 class="jumbo">
+                    {{ if .Params.link }}
                         <i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a>
-                        {{ else }}
+                    {{ else }}
                         <a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}">{{ .Title }}</a>
-                        {{ end }}
-                    </h1>
-                    {{ if gt .Date 0001 }} <!-- If Date is set (greater than year 0001) -->
-                    <h2><span><time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></span></h2>
                     {{ end }}
-                    {{ if (.Params.reading_time | default false) }}
+                </h1>
+                {{ if gt .Date 0001 }} <!-- If Date is set (greater than year 0001) -->
+                    <h2><span><time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></span></h2>
+                {{ end }}
+                {{ if (.Params.reading_time | default false) }}
                     <p>
                         <i class="fa fa-clock-o"></i>
                         Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
                     </p>
-                    {{ end }}
-                </header>
+                {{ end }}
+            </header>
 
-                <div class="sh-padding-64 sh-content">
-                    <article>
-                        <header>
-                            {{ if .Params.image.feature }}
+            <div class="padding-64 content">
+                <article>
+                    <header>
+                        {{ if .Params.image.feature }}
                             <a href="{{ .RelPermalink }}" title="{{ .Title }}"><img src="{{ .Params.image.feature | relURL }}" alt="{{ .Title }}"></a>
-                            {{ end }}
-                            <div>
-                                {{ if gt .Date 0001 }} <!-- If Date is set (greater than year 0001) -->
+                        {{ end }}
+                        <div>
+                            {{ if gt .Date 0001 }} <!-- If Date is set (greater than year 0001) -->
                                 <span><time datetime="{{ .Date }}"><a href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a></time></span>
-                                {{ end }}
-                                {{ if (.Params.reading_time | default true) }}
+                            {{ end }}
+                            {{ if (.Params.reading_time | default true) }}
                                 <span>
                                     <i class="fa fa-clock-o"></i>
                                     Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
                                 </span><!-- /.entry-reading-time -->
-                                {{ end }}
-                            </div>
-                            {{ if .Params.link }}
-                            <h1><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ .Params.link }}">{{ .Title }}</a></h1>
-                            {{ else }}
-                            <h1><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}" itemprop="url">{{ .Title }}</a></h1>
                             {{ end }}
-                        </header>
-                        <div>
-                            {{ .Content }}
                         </div>
-                    </article>
-                </div>
-            </div>          
+                        {{ if .Params.link }}
+                            <h1><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ .Params.link }}">{{ .Title }}</a></h1>
+                        {{ else }}
+                            <h1><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}" itemprop="url">{{ .Title }}</a></h1>
+                        {{ end }}
+                    </header>
+                    <div>
+                        {{ .Content }}
+                    </div>
+                </article>
+            </div>        
             {{ partial "footer.html" . }}
         </div>
     </body>

@@ -27,5 +27,12 @@ work_experience:
   date: March 2011
   title: An Agency is Born
   description: Lorem ipsum dolor sit amet, consectetur adipisicing elit!
+languages:
+- language: German
+  percent: 100
+- language: Spanish
+  percent: 75
+- language: Latain
+  percent: 20
 draft: true
 ---

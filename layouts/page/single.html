@@ -1,23 +1,22 @@
 <div id="page">
-    <header class="sh-container sh-padding-32 sh-center sh-black">
+    <header class="container padding-32 center black">
         <h1>
-            HI
-        {{ if .Params.link }}
-            <i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a>
-        {{ else }}
-            <a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}">{{ .Title }}</a>
-        {{ end }}
+            {{ if .Params.link }}
+                <i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a>
+            {{ else }}
+                <a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}">{{ .Title }}</a>
+            {{ end }}
         </h1>
 
         {{ if (.Params.reading_time | default false) }}
-            <p>
-                <i class="fa fa-clock-o"></i>
-                Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
-            </p><!-- /.entry-reading-time -->
+        <p>
+            <i class="fa fa-clock-o"></i>
+            Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
+        </p><!-- /.entry-reading-time -->
         {{ end }}
     </header>
 
-    <div class="sh-content sh-padding-64">
+    <div class="content padding-64">
         {{ .Content }}
         <footer>
             {{ if gt .Lastmod .Date }}<span>Updated on <span><time datetime="{{ .Lastmod }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></span></span>

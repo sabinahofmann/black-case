@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html>
     {{ partial "head.html" . }}
-    <body class="sh-black">
+    <body class="black">
         {{ partial "nav.html" . }}
-        <div class="sh-padding-large" id="main">
-            <div id="home">
-                <header class="sh-container sh-padding-32 sh-center sh-black">
-                    <h1 class="sh-jumbo">All posts</h1>
-                    <p>Everything that moves me.</p>
-                </header>
+        <div class="padding-large">
+            <header class="container padding-32 center black">
+                <h1 class="jumbo">{{ i18n "all_posts" }}</h1>
+                <p>{{ i18n "post_subtitle" }}</p>
+            </header>
 
-                <div class="sh-content sh-padding-64">
-
-                   {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
-                    {{ partial "pagination.html" . }}
-                    {{ range $paginator.Pages }}
-                        <div class="sh-margin sh-dark-grey">
-                            {{ if .Params.image.feature }}
-                                <a href="{{ .RelPermalink }}" title="{{ .Title }}"><img src="{{ .Params.image.feature | relURL }}" alt="{{ .Title }}" style="width:100%"></a>
-                            {{ end }}
-                            <div class="sh-container">
-                                <div class="sh-post-title">
-                                    <div class="sh-left-half">
-                                        <h2>
-                                            {{ if .Params.link }}
-                                                <a href="{{ .RelPermalink }}" class="permalink" rel="bookmark" title="{{ .Title }}"><i class="fa fa-bookmark"></i></a> 
-                                                <a href="{{ .Params.link }}">{{ .Title }}</a>                          
-                                            {{ else }}
-                                                {{ .Title }}
-                                            {{ end }}
-                                        </h2>
-                                    </div>
-                                    <div class="sh-right-half">
-                                        {{ if (.Params.reading_time | default true) }}
-                                            <span class="sh-opacity">
-                                                <i class="fa fa-clock-o"></i> Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
-                                            </span>
-                                        {{ end }} 
-                                    </div>
-                                </div>
-                                <h6>
-                                    {{ .Description }},
-                                    {{ if gt .Date 0001 }}
-                                        <span class="sh-opacity"><time datetime="{{ .Date }}">{{ .Date.Format "Jan 2, 2006" }}</time></span>
+            <div class="content padding-64">
+                {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+                {{ range .Paginator.Pages }}
+                <div class="post-card  margin dark-grey">
+                    {{ if .Params.image.feature }}
+                        <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+                            <img src="{{ .Params.image.feature | relURL }}" alt="{{ .Title }}" class="post-img">
+                        </a>
+                    {{ end }}
+                    <div class="container">
+                        <div class="post-title">
+                            <div class="post-left-half">
+                                <h2>
+                                    {{ if .Params.link }}
+                                        <a href="{{ .RelPermalink }}" class="permalink" rel="bookmark" title="{{ .Title }}"><i class="fa fa-bookmark"></i></a> 
+                                        <a href="{{ .Params.link }}">{{ .Title }}</a>                          
+                                    {{ else }}
+                                        {{ .Title }}
                                     {{ end }}
-                                </h6>
-
-                                <p>{{ .Summary }}</p>
-                                <p><a class="sh-button-link sh-light-grey sh-content sh-left" href="{{ .RelPermalink }}">read more</a><p>
+                                </h2>
+                            </div>
+                            <div class="post-right-half">
+                                {{ if (.Params.reading_time | default true) }}
+                                    <span class="opacity">
+                                        <i class="fa fa-clock-o"></i> Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
+                                    </span>
+                                {{ end }} 
                             </div>
                         </div>
-                    {{ end }}
+                        <h6>
+                            {{ .Description }},
+                            {{ if gt .Date 0001 }}
+                                <span class="opacity"><time datetime="{{ .Date }}">{{ .Date.Format "Jan 2, 2006" }}</time></span>
+                            {{ end }}
+                        </h6>
+                        <p>{{ .Summary }}</p>
+                        <p><a class="button-link light-grey content post-left" href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a><p>
+                    </div>
                 </div>
+                {{ end }}
+                {{ partial "pagination.html" . }}
             </div>
             {{ partial "footer.html" . }}
         </div>

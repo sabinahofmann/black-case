@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html>
     {{ partial "head.html" . }}
-    <body class="sh-black">
+    <body class="black">
         {{ partial "nav.html" . }}
-        <div class="sh-padding-large" id="main">
-            <div id="indexhome">
-                <header class="sh-container sh-padding-32 sh-center sh-black">
-                    <h1 class="sh-jumbo">All Welcomes</h1>
-                    <p>Everything that moves me.</p>
-                </header>
+        <div class="padding-large">
+            <header class="container padding-32 center black">
+                <h1 class="jumbo">All Welcomes</h1>
+                <p>Everything that moves me.</p>
+            </header>
 
-                <div class="sh-content sh-padding-64">
-                
-                </div>
+            <div class="content padding-64"> 
             </div>
             {{ partial "footer.html" . }}
         </div>

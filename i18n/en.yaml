@@ -1,0 +1,28 @@
+--- 
+- 
+  id: soft_skills
+  translation: "Soft skills"
+- 
+  id: programming_language
+  translation: "Programming language"
+- 
+  id: activities
+  translation: Activities
+- 
+  id: languages
+  translation: Language
+- 
+  id: hoppies
+  translation: Hobbies/Activities
+- 
+  id: miscellaneous
+  translation: Miscellaneous
+-
+  id: read_more
+  translation: read more
+-
+  id: all_posts
+  translation: All posts
+-
+  id: post_subtitle
+  translation: Everything that moves me.

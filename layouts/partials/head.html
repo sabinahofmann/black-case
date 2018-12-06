@@ -9,8 +9,6 @@
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{ if .IsHome }}
     {{ $.Scratch.Set "Params" .Site.Params }}
-{{ else if .IsNode }}
-    {{ $.Scratch.Set "Params" (index .Site.Data.sections (lower .Title)) }}
 {{ else }}
     {{ $.Scratch.Set "Params" .Params }}
 {{ end }}
@@ -21,19 +19,25 @@
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 {{ end }}
-<!-- http://t.co/dKP3o1e -->
+
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+{{ if .IsTranslated }}
+    {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+    {{ end }}
+{{ end }}
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
 <!-- Webfonts -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ "/css/fontawesome/css/all.css" | relURL }}">
 
 <meta http-equiv="cleartype" content="on">
 <!-- Hugo version -->
 {{ .Hugo.Generator }}
+
 
 </head>

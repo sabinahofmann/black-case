@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html>
     {{ partial "head.html" . }}
-    <body class="sh-black">
+    <body class="black">
         {{ partial "nav.html" . }}
-        <div class="sh-padding-large" id="main">
-            <div id="about">
-                <header class="sh-container sh-padding-32 sh-center sh-black">
-                    <h1 class="sh-jumbo"><span class="sh-hide-small">I'm</span> Sabina Hofmann.</h1>
-                    <p>I know I don't know anything.</p>
-                        {{ if .Site.Params.image }}                    
-                               <img src="{{ .Site.Params.image | relURL }}" alt="{{ .Title }}" class="sh-image" width="35%" height="35%">
-                        {{ end }}
-                </header>
-
-                <div class="sh-content sh-padding-64">
-                    <h2>{{ .Title }}</h2>
+        <div class="padding-large">
+            <header class="container padding-32 center black">
+                <h1 class="jumbo">{{ .Title }}</h1>
+            </header>
+            <div class="content padding-64">
+                {{ if isset .Params "soft_skills" }}
                     <p>{{ .Params.about_me }}</p>
                     <br>
-                    <h2 class="sh-padding-16">Soft skills</h2>
-                    {{ range $i, $e := .Params.soft_skills }}
-                        - {{ $e }}
-                    {{ end }} -
-                    
+                {{ end }}
+                {{ if isset .Params "soft_skills" }}
+                    <h2 class="padding-16">{{ i18n "soft_skills" }}</h2>
+                    <p>
+                        {{ range $i, $e := .Params.soft_skills }} - 
+                        {{ $e }}
+                        {{ end }} -
+                    </p>
                     <br>
-                    <h2 class="sh-padding-16">Programming language</h2> 
-                    <div class="sh-flex-wrapper">
+                {{ end }}
+                {{ if isset .Params "programming_languages" }}
+                    <h2 class="padding-16">{{ i18n "programming_language" }}</h2> 
+                    <div class="flex-wrapper">
                         {{ range $i, $e := .Params.programming_languages }}
                         {{ $className := "circular-chart blue" }}
 
                         {{ if (le $e.percent 35) }}
-                        {{ $className = "circular-chart orange" }}
+                            {{ $className = "circular-chart orange" }}
                         {{ end }}
                         {{ if (gt $e.percent 35) and (lt $e.percent 70)}}
-                        {{ $className = "circular-chart green" }}
+                            {{ $className = "circular-chart green" }}
                         {{ end }}  
                         {{ if (gt $e.percent 65) }}
-                        {{ $className = "circular-chart blue" }}
+                            {{ $className = "circular-chart blue" }}
                         {{ end }} 
 
                         <div class="single-chart">
@@ -57,15 +56,11 @@
                         </div>
                         {{ end }}
                     </div>
-                    <br> 
-                    <h2 class="sh-padding-16">Miscellaneous</h2>
-                    <div class="sh-flex-wrapper">
-                        {{ range $i, $e := .Params.miscellaneous_tags }}
-                        <span class="sh-tag">{{ $e }}</span>
-                        {{ end }}
-                    </div>
-                    <br>    
-                    <h2 class="sh-padding-16">Work experience</h2>
+                    <br>
+                    <br>
+                {{ end }}
+                {{ if isset .Params "work_experience" }}
+                    <h2 class="padding-16">{{ i18n "activities" }}</h2>
                     <ul class="timeline">
                         {{ range $i, $e := .Params.work_experience }}
                         <li {{ if (not (modBool $i 2)) }}class="timeline-inverted" {{ end }}>
@@ -85,23 +80,31 @@
                         {{ end }}
                     </ul>
                     <br>
-                    <h2 class="sh-padding-16">Language</h2>
-                    <p class="sh-wide">German</p>
-                    <div class="sh-white">
-                        <div class="sh-grey" style="height:28px;width:95%"></div>
-                    </div>
-                    <p class="sh-wide">English</p>
-                    <div class="sh-white">
-                        <div class="sh-grey" style="height:28px;width:85%"></div>
-                    </div>
+                {{ end }}
+                {{ if isset .Params "miscellaneous_tags" }}
+                    <h2 class="padding-16">{{ i18n "miscellaneous" }}</h2>
+                    <p>{{ range $i, $e := .Params.miscellaneous_tags }}
+                        - {{ $e }}
+                        {{ end }} -
+                    </p>
                     <br>
-
-                    <h2 class="sh-padding-16">Hobbies/Activities</h2>
-                    <div class="sh-row sh-center sh-padding-16 sh-section sh-light-grey">
+                {{ end }}
+                {{ if isset .Params "miscellaneous_tags" }}
+                    <h2 class="padding-16">{{ i18n "language" }}</h2>
+                    {{ range $i, $e := .Params.languages }}               
+                        <p class="wide">{{ .language}}</p>
+                        <div class="white">
+                            <div class="grey" style="height:28px;width:{{ .percent }}%"></div>
+                        </div>
+                    {{ end }}
+                    <br>
+                {{ end }}
+                {{ if isset .Params "miscellaneous_tags" }}
+                    <h2 class="padding-16">{{ i18n "hoppies" }}</h2>
+                    <div class="row center padding-16 section light-grey">
                         {{.Params.activities}}
                     </div>
-                    <!-- End About Section -->
-                </div>
+                {{ end }}
             </div>
             {{ partial "footer.html" . }}
         </div>
