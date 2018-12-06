@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <body class="black">
+        {{ partial "nav.html" . }}
+        <div class="padding-large" id="main">
+            <header class="container padding-32 center black">
+                <h1 class="jumbo">{{ .Site.Params.title }}</h1>
+                <p>{{ .Site.Params.sub_title }}</p>
+                <br>
+                {{ if .Site.Params.avatar }}      
+                    <img src="{{ .Site.Params.avatar | relURL }}" alt="{{ .Title }}">
+                {{ end }}                
+            </header>
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
+</html>
