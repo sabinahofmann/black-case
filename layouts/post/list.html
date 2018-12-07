@@ -10,7 +10,7 @@
             </header>
 
             <div class="content center padding-64">
-                {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+                {{ $paginator := .Paginate (where .Pages "Type" "post") }}
                 {{ range .Paginator.Pages }}
                 <div class="post-card  margin dark-grey">
                     {{ if .Params.image.feature }}
