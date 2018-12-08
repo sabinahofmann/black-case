@@ -1,5 +1,5 @@
 {{ "<!-- Footer section -->" | safeHTML }}
-<footer class="content padding-64 xlarge center">
+<footer class="content padding-32 center xlarge">
     {{ if isset .Site.Params "social_media" }}
         {{ range .Site.Params.social_media  }}
            <a href="{{ .url }}"><i class="{{ .icon }} hover-opacity"></i></a>
@@ -9,6 +9,6 @@
         {{ range .Site.Menus.footer }}
             <a href="{{ .URL | relLangURL }}">{{ .Name }}</a> |
         {{ end }}
-        @2018 Powered by <a href="https://github.com/sabinahofmann/black-case" target="_blank">black-case</a>
+        @2018 <a href="https://github.com/sabinahofmann/black-case" target="_blank">black-case</a>
     </p>
 </footer>

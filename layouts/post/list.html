@@ -9,8 +9,8 @@
                 <p>{{ i18n "post_subtitle" }}</p>
             </header>
 
-            <div class="content padding-64">
-                {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+            <div class="content center padding-64">
+                {{ $paginator := .Paginate (where .Pages "Type" "post") }}
                 {{ range .Paginator.Pages }}
                 <div class="post-card  margin dark-grey">
                     {{ if .Params.image.feature }}

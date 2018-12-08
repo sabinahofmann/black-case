@@ -346,7 +346,7 @@ br {
     .auto{max-width: 100%}
 }
 @media (max-width: 1300px){
-    .padding-64 { margin-left: 17% }
+    .padding-64 { margin-left: 12% }
 }
 /* pagination
 ========================================================================== */
@@ -357,8 +357,8 @@ br {
 }
 
 .pagination a.active {
-    background-color: dodgerblue;
-    color: white;
+    color: #000!important;
+    background-color: #f1f1f1!important;
 }
 
 .pagination a:hover:not(.active) {
