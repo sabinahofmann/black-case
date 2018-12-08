@@ -17,26 +17,22 @@ hugo-website
 |   └── about
 |   └── page
 |   └── imprint
-|   └── privacy
+|   └── privacy_policy
 ├── data
 ├── static
 │   └── images
 └── themes
-    └── hpstr
+    └── black-case
         ├── archetypes
         ├── layouts
         │   ├── _default
         │   └── partials
+        │   └── post
+        │   └── page
+        │   └── about
         └── static
             ├── css
-            │   └── _sass
-            │       └── vendor
-            │           ├── font-awesome
-            │           └── magnific-popup
-            ├── fonts
-            └── js
-                ├── plugins
-                └── vendor
+            │   └── fontawesome
 
 ```
 
