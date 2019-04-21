@@ -9,7 +9,7 @@ html{
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
-body{ 
+body{
     margin: 0
 }
 html, body{
@@ -24,7 +24,7 @@ img {
     vertical-align: middle;
     border-style: none;
 }
-a { 
+a {
     text-decoration: none;
     color: white;
     background-color: transparent;
@@ -39,11 +39,11 @@ input, select, textarea {
 }
 button, input{
     overflow: visible
-} 
+}
 button, select{
     text-transform: none
 }
-button,html [type=button],[type=reset],[type=submit] { 
+button,html [type=button],[type=reset],[type=submit] {
     -webkit-appearance: button
 }
 button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
@@ -97,43 +97,43 @@ br {
     color: #000!important;
     background-color: #fff!important
 }
-.black,.hover-black:hover {
+.blue,.hover-blue:hover {
     color: #fff!important;
-    background-color: #000!important
+    background-color: #7395AE!important
 }
 .grey,.hover-grey:hover {
     color: #000!important;
-    background-color: #9e9e9e!important
+    background-color: #505C61!important
 }
 .light-grey,.hover-light-grey:hover {
-    color: #000!important;
+    color: #505C61!important;
     background-color: #f1f1f1!important
 }
-.dark-grey,.hover-dark-grey:hover {
+.dark-blue,.hover-blue-grey:hover {
     color: #fff!important;
-    background-color: #606060!important
+    background-color: #557A95!important
 }
 /* typography
 ============================================================================== */
 .tiny {
     font-size: 10px!important
 }
-.small { 
+.small {
     font-size: 12px!important
 }
-.medium { 
+.medium {
     font-size: 15px!important
 }
 .large {
     font-size: 18px!important
 }
-.xlarge { 
+.xlarge {
     font-size: 24px!important
 }
 .xxlarge {
     font-size: 36px!important
 }
-.xxxlarge{ 
+.xxxlarge{
     font-size: 48px!important
 }
 .jumbo{
@@ -182,7 +182,7 @@ br {
 .sidebar{
     height: 100%;
     width: 200px;
-    background-color: #fff;
+    background-color: #557A95;
     position: fixed!important;
     z-index: 1;
     overflow: auto
@@ -257,7 +257,7 @@ br {
     margin-top: 16px!important;
     margin-bottom: 16px!important
 }
-.margin { 
+.margin {
     margin: 16px!important
 }
 .padding-small {
@@ -295,7 +295,7 @@ br {
 /* Set the width of the sidebar to 120px */
 .sidebar {
     width: 120px;
-    background: #222;
+    background: #557A95;
 }
 .tag {
     padding: 6px;
@@ -308,7 +308,7 @@ br {
 }
 .flex-wrapper {
     display: flex;
-    flex-flow: wrap; 
+    flex-flow: wrap;
 }
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {
@@ -395,13 +395,13 @@ br {
     width: 100%;
     height: auto;
 }
-/* 
-   Timeline 
+/*
+   Timeline
 ========================================================================== */
 .timeline {
     position: relative;
     padding: 0;
-    list-style: none; 
+    list-style: none;
 }
 .timeline:before {
     content: "";
@@ -411,40 +411,40 @@ br {
     left: 40px;
     width: 2px;
     margin-left: -1.5px;
-    background-color: #f1f1f1; 
+    background-color: #f1f1f1;
 }
 .timeline > li {
     position: relative;
     margin-bottom: 50px;
-    min-height: 50px; 
+    min-height: 50px;
 }
 .timeline > li:before {
     content: " ";
-    display: table; 
+    display: table;
 }
 .timeline > li:after {
     content: " ";
     display: table;
-    clear: both; 
+    clear: both;
 }
 .timeline > li .timeline-panel {
     float: right;
     position: relative;
     width: 100%;
     padding: 0 20px 0 100px;
-    text-align: left; 
+    text-align: left;
 }
 .timeline > li .timeline-panel:before {
     right: auto;
     left: -15px;
     border-right-width: 15px;
-    border-left-width: 0; 
+    border-left-width: 0;
 }
 .timeline > li .timeline-panel:after {
     right: auto;
     left: -14px;
     border-right-width: 14px;
-    border-left-width: 0; 
+    border-left-width: 0;
 }
 .timeline > li .timeline-image {
     z-index: 100;
@@ -456,43 +456,43 @@ br {
     border: 2px solid #f1f1f1;
     border-radius: 100%;
     text-align: center;
-    color: #616161;
-    background-color: #616161; 
+    color: #505C61;
+    background-color: #505C61;
 }
 .timeline > li .timeline-image h4 {
     margin-top: 12px;
     font-size: 10px;
-    line-height: 14px; 
+    line-height: 14px;
 }
 .timeline > li.timeline-inverted > .timeline-panel {
     float: right;
     padding: 0 20px 0 100px;
-    text-align: left; 
+    text-align: left;
 }
 .timeline > li.timeline-inverted > .timeline-panel:before {
     right: auto;
     left: -15px;
     border-right-width: 15px;
-    border-left-width: 0; 
+    border-left-width: 0;
 }
 .timeline > li.timeline-inverted > .timeline-panel:after {
     right: auto;
     left: -14px;
     border-right-width: 14px;
-    border-left-width: 0; 
+    border-left-width: 0;
 }
 .timeline > li:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 .timeline .timeline-heading h4 {
     margin-top: 0;
-    color: inherit; 
+    color: inherit;
 }
 .timeline .timeline-heading h4.subheading {
-    text-transform: none; 
+    text-transform: none;
 }
 .timeline .timeline-body > p, .timeline .timeline-body > ul {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 @media (min-width: 300px) and (max-width: 400px) {
     .timeline > li .timeline-image {
@@ -525,17 +525,17 @@ br {
 }
 @media (min-width: 768px) {
     .timeline:before {
-        left: 50%; 
+        left: 50%;
     }
     .timeline > li {
         margin-bottom: 0px;
-        min-height: 30px; 
+        min-height: 30px;
     }
     .timeline > li .timeline-panel {
         float: left;
         width: 47%;
         padding: 0 40px 20px 0px;
-        text-align: right; 
+        text-align: right;
     }
     .timeline > li .timeline-image {
         left: 50%;
@@ -546,20 +546,20 @@ br {
     .timeline > li .timeline-image h4 {
         margin-top: 16px;
         font-size: 13px;
-        line-height: 18px; 
+        line-height: 18px;
     }
     .timeline > li.timeline-inverted > .timeline-panel {
         float: right;
         padding: 0 30px 20px 40px;
-        text-align: left; 
-    } 
+        text-align: left;
+    }
 }
 @media (min-width: 992px) {
     .timeline > li {
-        min-height: 50px; 
+        min-height: 50px;
     }
     .timeline > li .timeline-panel {
-        padding: 0 20px 20px; 
+        padding: 0 20px 20px;
     }
     .timeline > li .timeline-image {
         width: 58px;
@@ -569,18 +569,18 @@ br {
     .timeline > li .timeline-image h4 {
         margin-top: 30px;
         font-size: 18px;
-        line-height: 26px; 
+        line-height: 26px;
     }
     .timeline > li.timeline-inverted > .timeline-panel {
-        padding: 0 20px 20px; 
-    } 
+        padding: 0 20px 20px;
+    }
 }
 @media (min-width: 1200px) {
     .timeline > li {
-        min-height: 50px; 
+        min-height: 50px;
     }
     .timeline > li .timeline-panel {
-        padding: 0 20px 40px 0px; 
+        padding: 0 20px 40px 0px;
     }
     .timeline > li .timeline-image {
 	width: 55px;
@@ -588,59 +588,59 @@ br {
 	margin-left: -29px;
     }
     .timeline > li .timeline-image h4 {
-        margin-top: 40px; 
+        margin-top: 40px;
     }
     .timeline > li.timeline-inverted > .timeline-panel {
-        padding: 0 80px -11px 0px; 
-    } 
+        padding: 0 80px -11px 0px;
+    }
 }
-/* 
-   circle 
+/*
+   circle
 ========================================================================== */
 .single-chart {
     text-align: center;
     width: 23%;
-    justify-content: space-around; 
+    justify-content: space-around;
 }
 .circular-chart {
     display: block;
     margin: 8px auto;
     max-width: 70%;
-    max-height: 150px; 
+    max-height: 150px;
 }
 .circle-bg {
     fill: none;
-    stroke: #616161;
-    stroke-width: 3.8; 
+    stroke: #505C61;
+    stroke-width: 3.8;
 }
 .circle {
     fill: none;
     stroke-width: 2.8;
     stroke-linecap: round;
-    animation: progress 1s ease-out forwards; 
+    animation: progress 1s ease-out forwards;
 }
 @keyframes progress {
     0% {
-        stroke-dasharray: 0 100; 
-    } 
+        stroke-dasharray: 0 100;
+    }
 }
 .circular-chart.orange .circle {
-    stroke: #fed136; 
+    stroke: #fed136;
 }
 .circular-chart.green .circle {
-    stroke: #4CC790; 
+    stroke: #4CC790;
 }
 .circular-chart.blue .circle {
-    stroke: #3c9ee5; 
+    stroke: #85BCE4;
 }
 .percentage {
     fill: #666;
     font-family: sans-serif;
     font-size: 0.3em;
-    text-anchor: middle; 
+    text-anchor: middle;
 }
 @media only screen and (max-width: 600px) {
     .single-chart {
-        width: 50%; 
+        width: 50%;
     }
 }

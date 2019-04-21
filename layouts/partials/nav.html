@@ -1,14 +1,14 @@
 <!--class="bar-item button padding-large black"-->
 <nav class="sidebar bar-block small hide-small center">
     {{ range .Site.Menus.main }}
-        <a href="{{ .URL | relLangURL }}" class="bar-item button padding-large hover-black">
+        <a href="{{ .URL | relLangURL }}" class="bar-item button padding-large">
             {{ .Pre | safeHTML }}
             <p>{{ .Name }}</p>
         </a>
     {{ end }}
     {{ if .IsTranslated }}
         {{ range .Translations }}
-            <a href="{{ .Permalink }}" class="bar-item button padding-large hover-black">
+            <a href="{{ .Permalink }}" class="bar-item button padding-large">
                 <i class="fas fa-flag xxlarge"></i>
                 <p>{{ .Language.LanguageName }}</p>
             </a>     
@@ -18,7 +18,7 @@
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="top hide-large hide-medium">
-    <nav class="bar black opacity hover-opacity-off center small">
+    <nav class="bar blue opacity hover-opacity-off center small">
         {{ range .Site.Menus.main }}
             <a href="{{ .URL | relLangURL }}" class="bar-item button" style="width:25% !important">{{ .Name }}</a>
         {{ end }}

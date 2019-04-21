@@ -1,5 +1,5 @@
 <div id="page">
-    <header class="container padding-32 center black">
+    <header class="container padding-32 center blue">
         <h1>
             {{ if .Params.link }}
                 <i class="fa fa-bookmark permalink"></i> <a href="{{ .Params.link }}">{{ .Title }}</a>
@@ -9,18 +9,18 @@
         </h1>
 
         {{ if (.Params.reading_time | default false) }}
-        <p>
-            <i class="fa fa-clock-o"></i>
-            Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
-        </p><!-- /.entry-reading-time -->
+            <p>
+                <i class="fa fa-clock-o"></i>
+                Reading time ~{{ if le .ReadingTime 1 }}1 minute{{ else }}{{ .ReadingTime }} minutes{{ end }}
+            </p><!-- /.entry-reading-time -->
         {{ end }}
     </header>
 
     <div class="content padding-64">
         {{ .Content }}
         <footer>
-            {{ if gt .Lastmod .Date }}<span>Updated on <span><time datetime="{{ .Lastmod }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></span></span>
-            <span><span class="fn">{{ $.Site.Params.author.name }}</span></span>{{ end }}
+            {{ if gt .Lastmod .Date }}<span>Updated on <time datetime="{{ .Lastmod }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></span>
+            <span class="fn">{{ $.Site.Params.author.name }}</span>{{ end }}
         </footer>
     </div>
 </div>
