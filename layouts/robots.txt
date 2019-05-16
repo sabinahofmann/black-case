@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /de/imprint/
+Disallow: /imprint/
+Disallow: /de/privacy_policy/
+Disallow: /privacy_policy/
+
