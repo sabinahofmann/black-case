@@ -9,6 +9,6 @@
         {{ range .Site.Menus.footer }}
             <a href="{{ .URL | relLangURL }}">{{ .Name }}</a> |
         {{ end }}
-        @2019 All rights reserved. Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://github.com/sabinahofmann/black-case" target="_blank">black-case</a>
+        @{{ now.Year }} All rights reserved. Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://github.com/sabinahofmann/black-case" target="_blank">black-case</a>
     </p>
 </footer>
