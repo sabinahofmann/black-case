@@ -34,6 +34,14 @@
 <!-- icons -->
 <link rel="stylesheet" href="{{ "/css/fontawesome/css/all.css" | relURL }}">
 
+{{ if .Site.Params.favicon }}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.favicon_icon }}">
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon.favicon.favicon_ico }}">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon.favicon_png }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon.favicon_png }}" sizes="96x96">
+    <link rel="apple-touch-icon" href="{{ .Site.Params.favicon.favicon_png }}">
+{{ end }}
+
 <meta http-equiv="cleartype" content="on">
 <!-- Hugo version -->
 {{ .Hugo.Generator }}
