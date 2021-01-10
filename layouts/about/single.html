@@ -30,7 +30,7 @@
                         {{ if (le $e.percent 35) }}
                             {{ $className = "circular-chart orange" }}
                         {{ end }}
-                        {{ if (gt $e.percent 35) and (lt $e.percent 70)}}
+                        {{ if and (gt $e.percent 35) (lt $e.percent 70)}}
                             {{ $className = "circular-chart green" }}
                         {{ end }}  
                         {{ if (gt $e.percent 65) }}
